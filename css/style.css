@@ -1,0 +1,252 @@
+/* css/style.css */
+
+/* 1. Definição das variáveis de cor e fontes */
+:root {
+    --cor-verde-claro: #CAD2C5;
+    --cor-verde-medio: #A6B1A0;
+    --cor-marrom: #84756A;
+    --cor-bege: #C6C5B9;
+    --cor-texto-escuro: #3D403D;
+    --cor-texto-claro: #F5F5F5;
+
+    /* A fonte do "Veja flores" parece uma Serifada elegante. 
+       Podemos usar 'Playfair Display' do Google Fonts. */
+    --font-titulo: 'Playfair Display', serif;
+    --font-corpo: 'Lato', sans-serif; /* Uma fonte limpa para o resto */
+}
+
+/* Importar as fontes do Google (coloque no topo do CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@700&display=swap');
+
+/* 2. Estilos Globais */
+body {
+    font-family: var(--font-corpo);
+    margin: 0;
+    background-color: #FFF;
+    color: var(--cor-texto-escuro);
+}
+
+/* 3. Estilo do Header */
+header {
+    background-color: var(--cor-verde-claro);
+    display: flex; /* Coloca logo e nav lado a lado */
+    justify-content: space-between; /* Espaça eles */
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 1.5em; /* 1.5x o tamanho padrão */
+    font-weight: bold;
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+nav ul {
+    list-style: none; /* Remove bolinhas */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+}
+
+/* 4. Estilo da Seção Hero */
+.hero {
+    background-color: var(--cor-marrom);
+    color: var(--cor-texto-claro);
+    display: flex;
+    align-items: center;
+    padding: 50px 40px;
+}
+
+.hero-text {
+    flex: 1; /* Ocupa metade do espaço */
+}
+
+.hero-text h1 {
+    font-family: var(--font-titulo);
+    font-size: 4em; /* Tamanho bem grande */
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--cor-bege);
+    color: var(--cor-texto-escuro);
+    padding: 12px 25px;
+    border-radius: 25px; /* Deixa o botão arredondado */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Para poder aplicar padding */
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+.link-flores {
+    color: var(--cor-texto-claro);
+    text-decoration: underline;
+}
+
+.hero-image {
+    flex: 1; /* Ocupa a outra metade */
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px; /* Borda arredondada na foto */
+}
+
+/* 5. Estilo do Portfólio Preview */
+.portfolio-preview {
+    background-color: var(--cor-verde-medio);
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.portfolio-preview h2 {
+    font-family: var(--font-titulo);
+    font-size: 2.5em;
+    color: var(--cor-texto-escuro);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre as imagens */
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 30%; /* Cada imagem ocupa ~30% */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+
+/* ========================================= */
+/* ESTILOS DA PÁGINA DE PORTFÓLIO
+/* ========================================= */
+
+.portfolio-header {
+    text-align: center;
+    padding: 40px 20px;
+    /* Usando a paleta de cores que definimos */
+    background-color: var(--cor-verde-medio); 
+    color: var(--cor-texto-escuro);
+}
+
+.portfolio-header h1 {
+    font-family: var(--font-titulo);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+/* 7. Barra de Filtro */
+.filter-nav {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Um fundo neutro */
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-btn {
+    font-family: var(--font-corpo);
+    background: none;
+    border: 1px solid var(--cor-marrom);
+    color: var(--cor-marrom);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    /* Transição suave para o hover */
+    transition: all 0.3s ease; 
+}
+
+.filter-btn:hover {
+    background-color: var(--cor-marrom);
+    color: white;
+}
+
+/* Este é o estilo do botão que está ATIVO */
+.filter-btn.active {
+    background-color: var(--cor-marrom);
+    color: white;
+}
+
+/* 8. Galeria do Portfólio (Grid Responsivo) */
+.portfolio-gallery {
+    display: grid;
+    /* Em telas maiores: 3 colunas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; /* Espaço entre os itens */
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o grid */
+}
+
+.gallery-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden; /* Para a imagem se ajustar à borda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    display: block;
+}
+
+.gallery-item h3 {
+    font-family: var(--font-titulo);
+    font-size: 1.4em;
+    padding: 15px 15px 5px 15px;
+    margin: 0;
+    color: var(--cor-texto-escuro);
+}
+
+.gallery-item p {
+    font-size: 0.9em;
+    padding: 0 15px 15px 15px;
+    margin: 0;
+    color: #555;
+}
+
+/* --- TORNANDO O GRID RESPONSIVO --- */
+
+/* Para telas médias (tablets) */
+@media (max-width: 900px) {
+    .portfolio-gallery {
+        /* 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    .portfolio-gallery {
+        /* 1 coluna */
+        grid-template-columns: 1fr;
+    }
+    .filter-btn {
+        width: 90%; /* Faz os botões ocuparem mais espaço */
+    }
+}

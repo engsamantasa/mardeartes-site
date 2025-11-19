@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - MARDEARTES</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">MARDEARTES</div>
+        <nav>
+            <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="catalogo.html" class="active">Catálogo</a></li> 
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="portfolio-page">
+        
+        <section class="portfolio-header">
+            <h1>Catálogo de Peças</h1>
+            <p>Explore nossas peças disponíveis para encomenda.</p>
+        </section>
+
+        <nav class="filter-nav">
+            <button class="filter-btn active" data-filter="all">Todas as Peças</button>
+            <button class="filter-btn" data-filter="parede">Arte de Parede</button>
+            <button class="filter-btn" data-filter="estatuas">Estátuas e Altar</button>
+        </nav>
+
+        <div class="portfolio-gallery">
+            
+            <div class="gallery-item" data-category="estatuas">
+                <img src="images/crucifixo-mesa.jpg" alt="Crucifixo de mesa branco e dourado">
+                <h3>Crucifixo de Mesa [DISPONÍVEL PARA ENCOMENDA]</h3>
+                <p>Estátua em gesso com detalhes dourados.</p>
+            </div>
+
+            
+            <div class="gallery-item" data-category="estatuas">
+                <img src="images/imagem-santo-exemplo.jpg" alt="Imagem de Santo">
+                <h3>São Francisco de Assis</h3>
+                <p>Estátua de 30cm para altar.</p>
+            </div>
+
+            <div class="gallery-item" data-category="parede">
+                <img src="images/coracoes-parede.jpg" alt="Trio de Sagrados Corações de parede">
+                <h3>Sagrados Corações</h3>
+                <p>Apliques de parede em branco e dourado.</p>
+            </div>
+
+            <div class="gallery-item" data-category="parede">
+                <img src="images/placa-bom-pastor.jpg" alt="Placa de parede Jesus o Bom Pastor">
+                <h3>Placa Bom Pastor</h3>
+                <p>Relevo de parede com pintura envelhecida.</p>
+            </div>
+
+
+        </div> 
+    </main>
+
+    <footer>
+        <p>© 2025 MARDEARTES. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
