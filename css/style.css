@@ -250,3 +250,38 @@ nav a {
         width: 90%; /* Faz os botões ocuparem mais espaço */
     }
 }
+
+
+/* Em: css/style.css */
+
+/* ========================================= */
+/* ESTILOS DA BARRA DE BUSCA (CATÁLOGO)
+/* ========================================= */
+
+/* 1. Ajustando a barra de navegação de filtros */
+.filter-nav {
+    display: flex; /* Coloca os botões e a busca lado a lado */
+    justify-content: space-between; /* Um em cada ponta */
+    align-items: center;
+    flex-wrap: wrap; /* Se não couber, quebra a linha */
+    padding: 15px 40px; /* Ajusta o padding */
+    gap: 20px; /* Espaço entre os botões e a busca */
+}
+
+/* 2. Estilizando o novo campo de busca */
+.search-container input {
+    font-family: var(--font-corpo);
+    font-size: 1em;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Mesma borda dos botões */
+    width: 250px; /* Tamanho do campo */
+    outline: none; /* Remove a borda azul ao clicar */
+    transition: all 0.3s ease;
+}
+
+/* 3. Efeito ao clicar no campo */
+.search-container input:focus {
+    border-color: var(--cor-marrom);
+    box-shadow: 0 0 5px rgba(132, 117, 106, 0.5); /* Sombra suave da cor marrom */
+}
