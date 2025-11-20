@@ -139,3 +139,26 @@ if (searchBar) {
         filterGallery();
     });
 }
+
+
+
+// --- MENU RESPONSIVO (HAMBÚRGUER) ---
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+// Verifica se os elementos existem (para não dar erro)
+if (hamburger && navMenu) {
+    
+    hamburger.addEventListener("click", () => {
+        // 1. Abre/Fecha o menu
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+
+    // 2. (Opcional) Fechar o menu quando clicar em um link
+    document.querySelectorAll(".nav-menu li a").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }));
+}

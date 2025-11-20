@@ -285,3 +285,70 @@ nav a {
     border-color: var(--cor-marrom);
     box-shadow: 0 0 5px rgba(132, 117, 106, 0.5); /* Sombra suave da cor marrom */
 }
+
+
+
+/* ========================================= */
+/* MENU RESPONSIVO (HAMBÚRGUER)
+/* ========================================= */
+
+/* 1. Estilo do Botão Hambúrguer (Escondido no Desktop) */
+.hamburger {
+    display: none; /* Por padrão, ninguém vê */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--cor-texto-escuro); /* Cor dos risquinhos */
+}
+
+/* 2. A Mágica: Só aplica se a tela for menor que 768px (Celulares/Tablets) */
+@media (max-width: 768px) {
+
+    /* Mostra o botão hambúrguer */
+    .hamburger {
+        display: block;
+    }
+
+    /* Esconde o menu original e prepara para aparecer */
+    .nav-menu {
+        position: fixed; /* Fica fixo na tela */
+        left: -100%; /* Começa FORA da tela (na esquerda) */
+        top: 70px; /* Altura do header, ajuste se precisar */
+        gap: 0;
+        flex-direction: column; /* Links um embaixo do outro */
+        background-color: var(--cor-verde-claro); /* Fundo do menu */
+        width: 100%; /* Ocupa a largura toda */
+        text-align: center;
+        transition: 0.3s; /* Animação suave */
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        z-index: 999; /* Garante que fica em cima de tudo */
+    }
+
+    /* Estilo dos itens do menu no celular */
+    .nav-menu li {
+        margin: 16px 0;
+    }
+
+    /* CLASSE ATIVA: Quando o JS adicionar essa classe, o menu aparece */
+    .nav-menu.active {
+        left: 0; /* Traz o menu para dentro da tela */
+    }
+
+    /* Efeito opcional: Transforma o hambúrguer num X quando aberto */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
